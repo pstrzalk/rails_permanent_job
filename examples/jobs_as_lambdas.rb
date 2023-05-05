@@ -1,8 +1,6 @@
 require_relative "../lib/rails_permanent_job"
 
-timer_sound_job = ->(**options) do
-  logger = options[:logger]
-
+timer_sound_job = ->(logger:, **_options) do
   even_second = Time.now.to_i % 2 == 0
 
   sound = even_second ? "tic" : "tac"
