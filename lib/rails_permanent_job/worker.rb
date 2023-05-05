@@ -7,6 +7,10 @@ module RailsPermanentJob
     def initialize
       logger.info "[RailsPermanentJob] Worker Initialization"
 
+      @worker_config = {
+        log_level: config[:log_level],
+        worker_count: config[:worker_count]
+      }
       @after_job = Configuration.after_job
       @jobs = Configuration.jobs
       @stop_flag = ServerEngine::BlockingFlag.new
@@ -19,10 +23,10 @@ module RailsPermanentJob
 
       until stop_flag_set?
         @jobs.each do |job|
-          job.call(logger)
+          job.call(logger: logger, config: @worker_config)
         end
 
-        @after_job.call(logger)
+        @after_job.call(logger: logger, config: @worker_config)
       end
     end
 

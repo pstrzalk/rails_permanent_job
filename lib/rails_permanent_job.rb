@@ -14,7 +14,7 @@ module RailsPermanentJob
   end
 
   def self.run(**params)
-    Run.call(**params)
+    Run.call(params)
   end
 end
 
