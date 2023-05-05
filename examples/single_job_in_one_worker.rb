@@ -1,13 +1,17 @@
 require_relative "../lib/rails_permanent_job"
 
 class Job
-  def self.call(logger)
+  def self.call(**options)
+    logger = options[:logger]
+
     logger.info "Doing Job"
   end
 end
 
 class AfterJob
-  def self.call(logger)
+  def self.call(**options)
+    logger = options[:logger]
+
     logger.info "Waiting for 1 second"
 
     sleep 1

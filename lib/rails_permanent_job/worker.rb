@@ -19,10 +19,10 @@ module RailsPermanentJob
 
       until stop_flag_set?
         @jobs.each do |job|
-          job.call(logger)
+          job.call(logger: logger, config: config)
         end
 
-        @after_job.call(logger)
+        @after_job.call(logger: logger, config: config)
       end
     end
 

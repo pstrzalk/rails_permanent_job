@@ -16,6 +16,10 @@ module RailsPermanentJob
       @logger ||= Logger.new($stdout)
     end
 
+    def config
+      @logger ||= {}
+    end
+
     def stop_flag_set?
       return true if @checked_at_least_once
 
