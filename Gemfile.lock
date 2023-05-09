@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails_permanent_job (0.1.0)
+    rails_permanent_job (0.2.0)
       rake (~> 13)
       serverengine (~> 2.1)
 
