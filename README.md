@@ -21,7 +21,30 @@ gem 'rails_permanent_job', git: 'https://github.com/pstrzalk/rails_permanent_job
 
 ## Usage
 
-TODO: Write some usage instructions
+Review examples in the `/examples` folder to see how to run a permanent job. Another example may be found in the `Rakefile` file included in this project.
+
+### Minimal use case for Ruby on Rails
+
+- install `rails_permanent_job` gem
+- add a rake task by creating a file in `PROJECT_ROOT/lib/tasks/permanent_jobs.rake`
+- put the following code in the file
+```ruby
+class BeepBeep
+  def self.call(**_options)
+    puts "Beep Beep"
+  end
+end
+
+namespace :permanent_jobs do
+  desc "Run a permanent job"
+  task foo: :environment do
+    RailsPermanentJob.jobs = [BeepBeep]
+    RailsPermanentJob.run(worker_count: 1)
+  end
+end
+```
+- run in CLI with `bundle exec rails permanent_jobs:foo`
+- kill with `Control + C` (or a similar combination appropriate for your OS)
 
 ## Development
 

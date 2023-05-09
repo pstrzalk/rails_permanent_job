@@ -18,4 +18,4 @@ end
 
 RailsPermanentJob.jobs = [Job]
 RailsPermanentJob.after_job = AfterJob
-RailsPermanentJob.run(worker_count: 1, log_level: "debug")
+RailsPermanentJob.run(workers: 1, log_level: "debug")

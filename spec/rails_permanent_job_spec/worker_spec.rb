@@ -7,6 +7,10 @@ module RailsPermanentJob
     def logger
       @logger ||= Logger.new($stdout)
     end
+
+    def config
+      @config ||= {}
+    end
   end
 
   class SingleRunFooWorker
@@ -17,7 +21,7 @@ module RailsPermanentJob
     end
 
     def config
-      @logger ||= {}
+      @config ||= {}
     end
 
     def stop_flag_set?

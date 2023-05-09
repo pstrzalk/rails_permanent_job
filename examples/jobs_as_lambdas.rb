@@ -12,4 +12,4 @@ after_job = ->(_) { sleep 1 }
 
 RailsPermanentJob.jobs = [timer_sound_job]
 RailsPermanentJob.after_job = after_job
-RailsPermanentJob.run(worker_count: 1)
+RailsPermanentJob.run(workers: 1)

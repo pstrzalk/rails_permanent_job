@@ -5,11 +5,11 @@ module RailsPermanentJob
     NoJobsConfigured = Class.new(Error)
 
     def initialize
-      logger.info "[RailsPermanentJob] Worker Initialization"
+      logger.info "[RailsPermanentJob] Worker Initialization in process #{Process.pid}"
 
       @worker_config = {
         log_level: config[:log_level],
-        worker_count: config[:worker_count]
+        workers: config[:workers]
       }
       @after_job = Configuration.after_job
       @jobs = Configuration.jobs

@@ -22,4 +22,4 @@ end
 
 RailsPermanentJob.jobs = [FirstJob, SecondJob]
 RailsPermanentJob.after_job = AfterJob
-RailsPermanentJob.run(worker_count: 1)
+RailsPermanentJob.run(workers: 1)

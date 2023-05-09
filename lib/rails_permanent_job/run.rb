@@ -15,7 +15,7 @@ module RailsPermanentJob
       log_rotate_size: DEFAULT_LOG_ROTATE_SIZE,
       pid_path: DEFAULT_PID_PATH,
       supervisor: true,
-      worker_count: DEFAULT_WORKER_COUNT,
+      workers: DEFAULT_WORKER_COUNT,
       worker_type: "process"
     }.freeze
 
