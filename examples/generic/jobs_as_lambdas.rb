@@ -1,4 +1,4 @@
-require_relative "../lib/rails_permanent_job"
+require_relative "../../lib/rails_permanent_job"
 
 timer_sound_job = ->(logger:, **_options) do
   even_second = Time.now.to_i % 2 == 0

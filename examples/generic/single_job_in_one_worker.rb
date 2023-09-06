@@ -1,4 +1,4 @@
-require_relative "../lib/rails_permanent_job"
+require_relative "../../lib/rails_permanent_job"
 
 class Job
   def self.call(logger:, config:, **options)

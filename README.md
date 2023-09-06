@@ -4,6 +4,8 @@ RailsPermanentJob is a way to easily run a reliable process performing a set of 
 
 ## Story behind the project
 
+Check it out on YouTube: [https://youtu.be/nRrxWJ4BExQ](https://youtu.be/nRrxWJ4BExQ)
+
 Every now and then there is a need to perform a constant check on application's state. It has been often implemented as a cronjob running every minute, as it's the minimal interval for such a solution.
 It has always been a flawed approach. Neither performing a job every second or scheduling a future job from a previous one are acceptable or reliable solutions for such a task.
 RailsPermanentJob is a project which aims to provide a reliable approach to running a long-lived process alongside a Ruby on Rails application.
